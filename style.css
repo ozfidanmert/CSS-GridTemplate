@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+        /* en yukarı navbar yaptık üst tarafı komple kapladı */
+        "nav nav nav"
+        "sidebar content-1 content-1"
+        "sidebar content-2 content-3"
+        "footer footer footer"
+
+    ;
+    gap: 2px;
+    grid-template-rows: .5fr 1.5fr 1.5fr .8fr;
+
+    /* grid area ile belirlediğimiz sütun sayısından fazla girersek ekstradan beyaz bir sütün açar bize o yüzden repeate kendi belirlediğimiz sütun sayısını girmemiz lazım */
+    /* grid-template-columns: repeat(4,1fr); */
+    grid-template-columns: repeat (3, 1fr);
+    background-color: blueviolet;
+}
+
+.navbar {
+    grid-area: nav;
+    background: linear-gradient(to right, rgba(0, 89, 255, 1), rgba(255, 0, 128, 1));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navbar .logo{
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+}
+.navbar .logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.navbar .menu a{
+    text-decoration: none;
+    padding: 25px;
+    color: antiquewhite;
+    font-size: 25px;
+}
+
+.navbar .menu a:hover{
+    color: white;
+    border-bottom: 1px solid wheat;
+}
+
+.sidebarHtml{
+    grid-area: sidebar;
+    background-image: url('https://images.unsplash.com/photo-1703015619478-0fe558ed7d05?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+}
+.content1{
+    grid-area: content-1;
+    background-image: url('https://images7.alphacoders.com/132/1328085.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.content1 h2{
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    color: palevioletred;
+}
+
+.content1 .kurslar{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.content1 .kurslar li a{
+    text-decoration: none;
+    color: purple;
+}
+.content1 .kurslar li a:hover{
+    font-size: 20px;
+    text-shadow: 0px 0px 5px wheat;
+    border-bottom: 2px solid gray;
+    padding-bottom: 10px;
+}
+
+.content2{
+    grid-area: content-2;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.content2 .profil-foto{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.content2 .profil-foto img{
+    width: 100%;
+    height: 100%;
+}
+
+.content2 .yorum{
+    width: 300px;
+}
+
+.content3{
+    grid-area: content-3;
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.content3 .profil-foto{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 50%;
+    overflow: hidden;
+    
+
+}
+.content3 .profil-foto img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    
+}
+
+.content3 .yorum{
+    width: 290px;
+    
+}
+
+
+.foot{
+    grid-area: footer;
+    background: linear-gradient(to left, rgba(0, 89, 255, 1), rgba(255, 0, 128, 1));
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;    
+    font-size: 16px;
+    padding: 30px;
+
+}
+.foot .footer-menu ul li{
+    list-style: none;
+    color: white;
+    padding-top: 10px;
+}
